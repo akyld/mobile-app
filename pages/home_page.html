@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper - display:none is suggested for CLS page performance improvements-->
+    <div id="page" style="display: none">
+      <!-- FOOTER CONTENT -->
+      <nav id="footer-bar" class="footer-bar-1 shadow-m footer-bar-detached">
+        <a id="nav-home" href="home_page.html">
+          <i class="bi bi-house"></i><span>Ana Sayfa</span>
+        </a>
+        <a
+          id="nav-qr"
+          href="#"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menu-qr">
+          <i class="bi bi-qr-code"></i><span>QR İşlemleri</span>
+        </a>
+        <a
+          id="nav-transfer"
+          href="#"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#menu-paratransferi">
+          <i class="bi bi-send"></i><span>Para Transferi</span>
+        </a>
+        <a id="nav-payments" href="menu-odemeler.html">
+          <i class="bi bi-receipt"></i><span>Ödemeler</span>
+        </a>
+        <a id="nav-cards" href="menu-kartlar.html">
+          <i class="bi bi-credit-card-2-front"></i><span>Kartlar</span>
+        </a>
+      </nav>
+
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title-->
+        <div class="pt-3">
+          <div class="page-title d-flex">
+            <div class="align-self-center me-auto">
+              <a
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menu-notifications"
+                data-menu-active="bildirimler"
+                ><i
+                  class="bi bi-list icon bg-theme rounded-s border border-gray color-theme font-24"></i
+              ></a>
+              <a href="page-destek-merkezi.html"
+                ><i
+                  class="bi bi-headset icon bg-theme color-theme rounded-s border border-gray font-24"></i
+              ></a>
+            </div>
+            <div class="align-self-center ms-auto d-flex align-items-center">
+              <div class="d-flex flex-column align-items-end ms-3">
+                <p class="color-theme opacity-50">John Doe</p>
+                <p class="color-theme opacity-50">
+                  Hesap No:
+                  <span class="text-decoration-underline">1234567890</span>
+                </p>
+              </div>
+              <a
+                href="#"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#menu-notifications-profile"
+                class="icon bg-theme rounded-s border border-gray">
+                <i class="bi bi-person color-theme font-24"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Card Slider-->
+        <div
+          class="splide single-slider slider-no-dots slider-no-arrows slider-visible"
+          id="single-slider-1">
+          <div class="splide__track">
+            <div class="splide__list">
+              <div class="splide__slide">
+                <div
+                  class="card card-style m-0 border card-bg-theme"
+                  style="height: 200px">
+                  <div class="card-top mt-3 ms-3 d-flex">
+                    <img
+                      class="me-2"
+                      src="/images/pictures/flag-for-turkey-svgrepo-com.svg"
+                      width="20"
+                      height="20"
+                      alt="" />
+                    <p class="color-theme font-monospace">Türk Lirası Hesabı</p>
+                  </div>
+                  <div class="card-center">
+                    <div
+                      class="card-bg-theme px-3 py-2 rounded-end d-inline-block">
+                      <h2 class="color-theme font-26">₺10.000,00</h2>
+                      <p>
+                        IBAN'ın:
+                        <span class="text-decoration-underline"
+                          >TR00 0000 0000 0000 0000 0000 00</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <div class="my-5 opacity-70"></div>
+                  <div class="card-bottom mb-3 mx-2">
+                    <a
+                      href="page-para-cek-yatir.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Çek / Yatır <i class="bi bi-wallet ms-2"></i
+                    ></a>
+                    <a
+                      href="page-para-transferi.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Gönder <i class="bi bi-send ms-2"></i
+                    ></a>
+                  </div>
+                  <!-- <div class="card-overlay bg-black opacity-50"></div> -->
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="card card-style m-0 border card-bg-theme"
+                  style="height: 200px">
+                  <div class="card-top mt-3 ms-3 d-flex">
+                    <img
+                      class="me-2"
+                      src="/images/pictures/flag-for-turkey-svgrepo-com.svg"
+                      width="20"
+                      height="20"
+                      alt="" />
+                    <p class="color-theme font-monospace">Türk Lirası Hesabı</p>
+                  </div>
+                  <div class="card-center">
+                    <div
+                      class="card-bg-theme px-3 py-2 rounded-end d-inline-block">
+                      <h2 class="color-theme font-26">₺10.000,00</h2>
+                      <p>
+                        IBAN'ın:
+                        <span class="text-decoration-underline"
+                          >TR00 0000 0000 0000 0000 0000 00</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <div class="my-5 opacity-70"></div>
+                  <div class="card-bottom mb-3 mx-2">
+                    <a
+                      href="page-para-cek-yatir.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Çek / Yatır <i class="bi bi-wallet ms-2"></i
+                    ></a>
+                    <a
+                      href="page-para-transferi.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Gönder <i class="bi bi-send ms-2"></i
+                    ></a>
+                  </div>
+                  <!-- <div class="card-overlay bg-black opacity-50"></div> -->
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="card card-style m-0 border card-bg-theme"
+                  style="height: 200px">
+                  <div class="card-top mt-3 ms-3 d-flex">
+                    <img
+                      class="me-2"
+                      src="/images/pictures/flag-for-turkey-svgrepo-com.svg"
+                      width="20"
+                      height="20"
+                      alt="" />
+                    <p class="color-theme font-monospace">Türk Lirası Hesabı</p>
+                  </div>
+                  <div class="card-center">
+                    <div
+                      class="card-bg-theme px-3 py-2 rounded-end d-inline-block">
+                      <h2 class="color-theme font-26">₺10.000,00</h2>
+                      <p>
+                        IBAN'ın:
+                        <span class="text-decoration-underline"
+                          >TR00 0000 0000 0000 0000 0000 00</span
+                        >
+                      </p>
+                    </div>
+                  </div>
+                  <div class="my-5 opacity-70"></div>
+                  <div class="card-bottom mb-3 mx-2">
+                    <a
+                      href="page-para-cek-yatir.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Çek / Yatır <i class="bi bi-wallet ms-2"></i
+                    ></a>
+                    <a
+                      href="page-para-transferi.html"
+                      class="p-2 pe-2 text-start color-theme font-monospace border rounded-3 list-bg-theme"
+                      >Gönder <i class="bi bi-send ms-2"></i
+                    ></a>
+                  </div>
+                  <!-- <div class="card-overlay bg-black opacity-50"></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity Title-->
+        <div class="content mt-4 px-3">
+          <div class="d-flex align-middle">
+            <p class="font-16 pe-2 color-theme opacity-50">HESAP HAREKETLERİ</p>
+            <a href="page-hesap hareketleri.html"
+              ><i class="bi bi-arrow-right color-theme opacity-50"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Recent Activity Cards-->
+        <div class="card card-style mt-n5 recent-bg-theme shadow-none">
+          <div class="content">
+            <a href="page-hesap hareketleri.html" class="d-flex py-1">
+              <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-red"
+                  ><i class="bi bi-youtube color-white fs-3"></i
+                ></span>
+              </div>
+              <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Youtube</h5>
+                <p class="mb-0 font-11 opacity-50">Banka Kartı</p>
+              </div>
+              <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-red-dark">₺52,99</h4>
+
+                <p class="mb-0 font-11 opacity-50">
+                  6 Şubat <span class="copyright-year"></span>
+                </p>
+              </div>
+            </a>
+            <div class="divider my-2 opacity-0"></div>
+            <a href="page-hesap hareketleri.html" class="d-flex py-1">
+              <div class="align-self-center">
+                <span class="icon rounded-s me-2 bg-black"
+                  ><i class="bi bi-spotify color-green-dark fs-3"></i
+                ></span>
+              </div>
+              <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Spotify</h5>
+                <p class="mb-0 font-11 opacity-50">Banka Kartı</p>
+              </div>
+              <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-red-dark">₺32,99</h4>
+
+                <p class="mb-0 font-11 opacity-50">
+                  4 Şubat <span class="copyright-year"></span>
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Cashback Title-->
+        <div class="content mt-n3 px-3">
+          <div class="d-flex align-middle">
+            <p class="font-16 pe-2 color-theme opacity-50">Cashback</p>
+            <a href="page-cashback.html"
+              ><i class="bi bi-arrow-right color-theme opacity-50"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Cashback Card-->
+        <div class="card card-style shadow-none mt-n5 card-bg-theme border">
+          <div class="content">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <p class="color-theme opacity-50 mb-0">Bu ay kazandığın</p>
+                <h1 class="color-theme font-18">₺10,00</h1>
+              </div>
+              <div>
+                <p class="color-theme opacity-50 mb-0">Bu ay kazanabileceğin</p>
+                <h1 class="color-theme font-18">₺3.480,00</h1>
+              </div>
+            </div>
+          </div>
+          <div class="slider-container card-bg-theme mt-n4">
+            <div class="slider">
+              <div class="slider-track"></div>
+              <div class="color-bg-theme slider-thumb color-theme"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advertisement Card Slider-->
+        <div
+          class="splide single-slider slider-no-dots slider-no-arrows slider-visible"
+          id="single-slider-2">
+          <div class="splide__track">
+            <div class="splide__list">
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-eczane-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/eczane.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-60 mb-n1 font-14">
+                            Eczane
+                          </p>
+                          <h1 class="color-white font-18">%10</h1>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/eczane_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-16">Eczane</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺25 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-youtube-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/youtube_logo_1.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-50 mb-n1">Video</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/youtube_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-18">Youtube</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺10 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-steam-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/steam_logo_1.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-50 mb-n1">Oyun</p>
+                          <h1 class="color-white font-18">%10</h1>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/steam_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-18">Steam</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺25 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+      </div>
+
+      <!-- End of Page Content-->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+
+      <!-- Notifications Bell -->
+      <div
+        id="menu-notifications"
+        data-menu-load="menu-notifications.html"
+        class="offcanvas offcanvas-top offcanvas-detached rounded-m"></div>
+
+      <!-- Profile -->
+      <div
+        id="menu-notifications-profile"
+        data-menu-load="menu-profile.html"
+        class="offcanvas offcanvas-top offcanvas-detached rounded-m"></div>
+
+      <!-- QR İşlemleri -->
+      <div
+        id="menu-qr"
+        data-menu-load="menu-qr.html"
+        class="offcanvas offcanvas-bottom offcanvas-detached rounded-m"></div>
+
+      <!-- Para Transferi -->
+      <div
+        id="menu-paratransferi"
+        data-menu-load="menu-paratransferi.html"
+        class="offcanvas offcanvas-bottom offcanvas-detached rounded-m"></div>
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+    <!-- <script>
+      function loadCustomScript() {
+        const oldScript = document.querySelector(
+          'script[src="/scripts/custom.js"]'
+        );
+        if (oldScript) {
+          oldScript.remove(); // Remove old script if it exists
+        }
+
+        const newScript = document.createElement("script");
+        newScript.src = "/scripts/custom.js";
+        newScript.onload = function () {};
+
+        document.body.appendChild(newScript);
+      }
+
+      /* loadCustomScript(); // Load on page refresh */
+
+      document.addEventListener("swup:contentReplaced", function () {
+        loadCustomScript();
+      });
+    </script> -->
+  </body>
+</html>

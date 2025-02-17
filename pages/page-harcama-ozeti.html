@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper-->
+    <div id="page">
+      <!-- Footer Bar -->
+
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title-->
+        <div class="pt-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="home_page.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
+            </div>
+            <h1 class="mb-0">Aylık Özet</h1>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="card card-style px-0 shadow-none list-bg-theme">
+          <div class="form-custom form-label form-border form-icon px-3 pt-1">
+            <i class="bi bi-calendar font-13"></i>
+            <select class="form-select rounded-xs" id="c6a">
+              <option value="0" selected>Current Month</option>
+              <option value="01">January</option>
+              <option value="02">February</option>
+              <option value="03">March</option>
+              <option value="04">April</option>
+              <option value="05">May</option>
+              <option value="06">June</option>
+              <option value="07">July</option>
+              <option value="08">August</option>
+              <option value="09">September</option>
+              <option value="10">Octomber</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div class="position-relative">
+            <div class="position-absolute w-100" style="height: 320px">
+              <!-- same height as chart in plugins/apex/apex-call.js-->
+              <div class="card-center">
+                <h1 class="pb-5 mb-5 text-center">
+                  <span class="font-25 d-block mt-1">₺85,98</span>
+                  <span class="font-12 font-400 opacity-50 d-block mt-n2"
+                    >Bu ay harcanan</span
+                  >
+                </h1>
+              </div>
+            </div>
+            <div class="mx-auto mt-2" style="width: 320px">
+              <!-- same height as chart in plugins/apex/apex-call.js-->
+              <div class="chart mx-auto no-click" id="chart-activity"></div>
+            </div>
+          </div>
+
+          <div class="content mt-5 mb-0">
+            <a class="d-flex pb-3">
+              <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-red"
+                  ><i class="bi bi-youtube color-white fs-3"></i
+                ></span>
+              </div>
+              <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Youtube</h5>
+                <p class="mb-0 font-11 opacity-50">1 Transactions</p>
+              </div>
+              <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-red-dark">₺52,99</h4>
+                <p class="mb-0 font-12 opacity-50">100%</p>
+              </div>
+            </a>
+            <a class="d-flex pb-3">
+              <div class="align-self-center">
+                <span class="icon rounded-s me-2 bg-black"
+                  ><i class="bi bi-spotify color-green-dark fs-3"></i
+                ></span>
+              </div>
+              <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Spotify</h5>
+                <p class="mb-0 font-11 opacity-50">1 Transactions</p>
+              </div>
+              <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-red-dark">₺32,99</h4>
+                <p class="mb-0 font-12 opacity-50">100%</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- End of Page Content-->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>

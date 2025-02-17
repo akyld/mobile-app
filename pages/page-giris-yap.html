@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper-->
+    <div id="page">
+      <!-- Footer Bar -->
+
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Discription -->
+        <div class="my-5 pt-5 text-center color-theme mx-4">
+          <h1>Devam Edebilmek için Lütfen Giriş Yapın.</h1>
+        </div>
+        <!-- Form Area -->
+        <div class="card card-style shadow-none bg-transparent">
+          <div class="content mb-0">
+            <div
+              class="form-custom form-label form-border form-icon mb-3 bg-transparent">
+              <i class="bi bi-person-circle font-13"></i>
+              <input
+                type="text"
+                class="form-control rounded-xs"
+                id="c1"
+                placeholder="Kullanıcı Adı" />
+              <label for="c1" class="color-theme">Kullanıcı Adı</label>
+              <span>(Gerekli)</span>
+            </div>
+            <div
+              class="form-custom form-label form-border form-icon mb-4 bg-transparent">
+              <i class="bi bi-asterisk font-13"></i>
+              <input
+                type="password"
+                class="form-control rounded-xs"
+                id="c2"
+                placeholder="Şifre" />
+              <label for="c2" class="color-theme">Şifre</label>
+              <span>(Gerekli)</span>
+            </div>
+            <div class="form-check form-check-custom color-theme">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="type"
+                value=""
+                id="c2a" />
+              <label class="form-check-label font-12" for="c2a"
+                >Beni Hatırla</label
+              >
+              <i
+                class="is-checked color-theme font-13 bi bi-check-circle-fill"></i>
+              <i class="is-unchecked color-theme font-13 bi bi-circle"></i>
+            </div>
+            <a
+              href="home_page.html"
+              class="btn btn-full color-bg-theme color-alt-theme mt-4"
+              >Giriş Yap</a
+            >
+            <div class="row">
+              <div class="col-6 text-start">
+                <a
+                  href="page-sifremiunuttum.html"
+                  class="font-11 color-theme opacity-40 pt-4 d-block"
+                  >Şifremi Unuttum</a
+                >
+              </div>
+              <div class="col-6 text-end">
+                <a
+                  href="page-hesapolustur.html"
+                  class="font-11 color-theme opacity-40 pt-4 d-block"
+                  >Hesap Oluştur</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="container">
+          <div class="row g-3">
+            <div class="col-6">
+              <a class="feature-box card-bg-theme">
+                <div class="icon-circle">
+                  <i class="bi bi-send fs-4 color-icon-theme"></i>
+                </div>
+                <h5 class="feature-title color-theme">Para Gönder</h5>
+              </a>
+            </div>
+            <div class="col-6">
+              <a class="feature-box card-bg-theme">
+                <div class="icon-circle">
+                  <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="6" width="20" height="12" rx="2"/>
+                            <path d="M2 10h20"/>
+                        </svg> -->
+                  <i class="bi bi-credit-card fs-4 color-icon-theme"></i>
+                </div>
+                <h5 class="feature-title color-theme">Para Yatır/Çek</h5>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Page Content-->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>

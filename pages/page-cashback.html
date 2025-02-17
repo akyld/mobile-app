@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper - display:none is suggested for CLS page performance improvements-->
+    <div id="page" style="display: none">
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title-->
+        <div class="pt-3 mb-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="home_page.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
+            </div>
+            <h1 class="mb-0">Cashback</h1>
+          </div>
+        </div>
+
+        <!-- Cashback Card-->
+        <div class="card card-style shadow-none mt-3 bg-transparent">
+          <div class="content">
+            <div class="d-flex align-items-center justify-content-between">
+              <div>
+                <p class="color-theme opacity-50 mb-0">Bu ay kazandığın</p>
+                <h1 class="color-theme font-18">₺10,00</h1>
+              </div>
+              <div>
+                <p class="color-theme opacity-50 mb-0">Bu ay kazanabileceğin</p>
+                <h1 class="color-theme font-18">₺3.480,00</h1>
+              </div>
+            </div>
+          </div>
+          <div class="slider-container bg-theme mt-n4">
+            <div class="slider">
+              <div class="slider-track"></div>
+              <div class="color-bg-theme slider-thumb color-theme"></div>
+            </div>
+          </div>
+          <div class="content d-flex flex-column align-items-center mt-n2">
+            <p class="mb-0 mt-2 text-center">Bugüne dek toplam kazancın</p>
+            <h5 class="mb-0">₺500,00</h5>
+          </div>
+        </div>
+
+        <!-- Filter Buttons-->
+        <div class="container-fluid px-0 mb-3 ms-2">
+          <div class="category-scroll overflow-auto">
+            <div class="d-flex flex-nowrap">
+              <button
+                class="category-btn active me-2 flex-shrink-0"
+                data-category="all">
+                Tümü
+              </button>
+              <button
+                class="category-btn me-2 flex-shrink-0"
+                data-category="eczane">
+                Eczane
+              </button>
+              <button
+                class="category-btn me-2 flex-shrink-0"
+                data-category="market">
+                Market
+              </button>
+              <button
+                class="category-btn me-2 flex-shrink-0"
+                data-category="video">
+                Video
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- AD Card -->
+        <div class="mt-3">
+          <div
+            data-category="eczane"
+            class="bg-ad-eczane-card card card-style border white-bg-theme"
+            style="height: 300px">
+            <div class="slider-container-ad mb-4">
+              <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center me-5">
+                  <img
+                    class="ad-card-sm-logo me-2"
+                    src="/images/pictures/eczane.png"
+                    alt="" />
+                  <div>
+                    <p class="color-white opacity-60 mb-n1 font-14">Eczane</p>
+                    <h1 class="color-white font-18">%10</h1>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <img
+                    class="ad-card-lg-logo me-2"
+                    src="/images/pictures/eczane_logo_2.png"
+                    alt="" />
+                  <div>
+                    <div>
+                      <p class="color-white mb-n1 font-16">Eczane</p>
+                      <h1 class="color-white font-12 opacity-50">
+                        Her ay ₺25 kazan
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider">
+                <div class="slider-track-ad"></div>
+                <div class="slider-thumb-ad"></div>
+              </div>
+            </div>
+          </div>
+          <div
+            data-category="video"
+            class="bg-ad-youtube-card card card-style border white-bg-theme mt-2"
+            style="height: 300px">
+            <div class="slider-container-ad mb-4">
+              <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center me-5">
+                  <img
+                    class="ad-card-sm-logo me-2"
+                    src="/images/pictures/youtube_logo_1.png"
+                    alt="" />
+                  <div>
+                    <p class="color-white opacity-50 mb-n1">Video</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <img
+                    class="ad-card-lg-logo me-2"
+                    src="/images/pictures/youtube_logo_2.png"
+                    alt="" />
+                  <div>
+                    <div>
+                      <p class="color-white mb-n1 font-18">Youtube</p>
+                      <h1 class="color-white font-12 opacity-50">
+                        Her ay ₺10 kazan
+                      </h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slider">
+                <div class="slider-track-ad"></div>
+                <div class="slider-thumb-ad"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Advertisement Card Slider-->
+        <!-- <div
+          class="splide single-slider slider-no-dots slider-no-arrows slider-visible"
+          id="single-slider-2">
+          <div class="splide__track">
+            <div class="splide__list">
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-eczane-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/eczane.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-60 mb-n1 font-14">
+                            Eczane
+                          </p>
+                          <h1 class="color-white font-18">%10</h1>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/eczane_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-16">Eczane</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺25 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-youtube-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/youtube_logo_1.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-50 mb-n1">Video</p>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/youtube_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-18">Youtube</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺10 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="splide__slide">
+                <div
+                  class="bg-ad-steam-card card card-style m-0 border white-bg-theme"
+                  style="height: 300px">
+                  <div class="slider-container-ad mb-4">
+                    <div class="d-flex align-items-center">
+                      <div class="d-flex align-items-center me-5">
+                        <img
+                          class="ad-card-sm-logo me-2"
+                          src="/images/pictures/steam_logo_1.png"
+                          alt="" />
+                        <div>
+                          <p class="color-white opacity-50 mb-n1">Oyun</p>
+                          <h1 class="color-white font-18">%10</h1>
+                        </div>
+                      </div>
+                      <div class="d-flex">
+                        <img
+                          class="ad-card-lg-logo me-2"
+                          src="/images/pictures/steam_logo_2.png"
+                          alt="" />
+                        <div>
+                          <div>
+                            <p class="color-white mb-n1 font-18">Steam</p>
+                            <h1 class="color-white font-12 opacity-50">
+                              Her ay ₺25 kazan
+                            </h1>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="slider">
+                      <div class="slider-track-ad"></div>
+                      <div class="slider-thumb-ad"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+        <!-- Add your page content here -->
+      </div>
+
+      <!-- End of Page Content-->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>

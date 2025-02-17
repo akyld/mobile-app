@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper - display:none is suggested for CLS page performance improvements-->
+    <div id="page">
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title-->
+        <div class="pt-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="home_page.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
+            </div>
+            <h1 class="mb-0">Hesap Detayları</h1>
+          </div>
+        </div>
+
+        <!-- Card Area -->
+
+        <div class="card card-style shadow-none recent-bg-theme mb-0 mt-n4">
+          <div class="content mb-0">
+            <div class="">
+              <div class="d-flex align-items-center">
+                <div class="content">
+                  <div class="file-data">
+                    <img
+                      id="image-data"
+                      src="/images/empty.png"
+                      class="img-fluid rounded-circle"
+                      style="max-width: 50%"
+                      alt="img" />
+                    <div class="add-btn">
+                      <input
+                        type="file"
+                        class="upload-file upload-file-text"
+                        style="z-index: 3"
+                        accept="image/*" />
+                      <p
+                        class="rounded-circle upload-file-text color-bg-theme position-relative"
+                        style="width: 50px; height: 50px">
+                        <i
+                          class="bi bi-person-plus upload-file-text fs-5 color-alt-theme position-absolute"
+                          style="top: 25%; left: 30%"></i>
+                      </p>
+                      <!-- <p
+                        class="btn btn-xs text-uppercase font-700 rounded-circle upload-file-text bg-highlight d-flex align-items-center justify-content-center"
+                        style="width: 50px; height: 50px">
+                        <i class="bi bi-upload upload-file-text"></i>
+                      </p> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="ps-1">
+                  <h5 class="mb-0">John Doe</h5>
+                  <p class="mb-0">+90 123 456 7890</p>
+                  <span class="mb-0">johndoe@example.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="divider opacity-70 mt-2"></div>
+          </div>
+        </div>
+
+        <!-- List Area -->
+
+        <div class="card card-style shadow-none recent-bg-theme">
+          <div class="content mb-0">
+            <div class="search-results disabled-search-list">
+              <div class="list-group list-custom-large">
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Hesap tipi</h5>
+                    <span class="mb-0">Doğrulanmış ya da Doğrulanmamış</span>
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0 color-green-dark">Doğrulanmış</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Hesap numarası</h5>
+                    <span class="mb-0"
+                      >Para transferi ve ödeme almak için paylaşabileceğin hesap
+                      numarası</span
+                    >
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0">0000000000</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 30%">
+                    <h5 class="mb-0">IBAN</h5>
+                    <span class="mb-0">Para transferi alabilirsin</span>
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0 text-decoration-underline">
+                      TR00 0000 0000 0000 0000 0000 00
+                    </h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Toplam Bakiye</h5>
+                    <span class="mb-0">TL hesabında bulunan toplam bakiye</span>
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0">₺10.000,00</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Kullanılabilir Bakiye</h5>
+                    <span class="mb-0"
+                      >İşlem ve ödeme yapabileceğin bakiye</span
+                    >
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0">₺10.000,00</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Gelen tutar limiti</h5>
+                    <span class="mb-0"
+                      >Aylık gelebilecek toplam tutar limiti</span
+                    >
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0">₺1.000.000,00</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+                <a href="#" class="d-flex py-2 align-items-center">
+                  <div class="ps-1 color-theme" style="max-width: 60%">
+                    <h5 class="mb-0">Nakit yatırma limiti</h5>
+                    <span class="mb-0"
+                      >Aylık yatırılabilecek toplam nakit limiti</span
+                    >
+                  </div>
+                  <div class="ms-auto text-end">
+                    <h5 class="mb-0">₺250.000,00</h5>
+                  </div>
+                </a>
+                <div class="divider my-1 opacity-70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Section -->
+        <div class="d-flex flex-column mt-3 mb-5 align-items-center">
+          <a href="#" class="color-theme text-decoration-underline mb-2"
+            >Kullanıcı Sözleşmesi</a
+          >
+          <a href="#" class="color-theme text-decoration-underline"
+            >KVKK Metni</a
+          >
+        </div>
+      </div>
+      <!-- End of Page Content-->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>
+
+<!-- <div class="content">
+  <h3>File Upload</h3>
+  <p>
+    All the input styles you could ever need, styled to match your device and
+    powered by HTML5 validation for maximum compatibility.
+  </p>
+  <ul class="ps-3">
+    <li>Using WebAPI's</li>
+    <li>Retrieve file data and info</li>
+    <li>Preview the Uploaded Image</li>
+  </ul>
+  <div class="divider mb-0"></div>
+  <div class="file-data">
+    <img
+      id="image-data"
+      src="images/empty.png"
+      class="img-fluid rounded-s"
+      alt="img" />
+    <span class="upload-file-name d-block text-center" data-text-before=""
+      ><i class="bi bi-check-circle-fill color-green-dark pe-2"></i> Image:"
+      data-text-after=" is ready."
+    </span>
+    <div>
+      <input type="file" class="upload-file" accept="image/*" />
+      <p
+        class="btn btn-full btn-m text-uppercase font-700 rounded-s upload-file-text bg-highlight">
+        Upload Image
+      </p>
+    </div>
+  </div>
+</div> -->
