@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper-->
+    <div id="page">
+      <!-- Footer Bar -->
+
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title -->
+        <div class="pt-3 mt-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="page-ayarlar.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Page Discription -->
+        <div class="my-5 text-center color-theme mx-4">
+          <h1>Adres Bilgilerini Yönet</h1>
+          <div class="accordion accordion-m border-0" id="accordion-group-5">
+            <div class="accordion-item">
+              <button
+                class="accordion-button px-0 ps-1 mt-3 collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#accordion5-1">
+                <i class="bi bi-geo-alt color-red-dark pe-3 font-14"></i>
+                <span class="font-600 font-13">Kayıtlı Adres 1</span>
+                <i class="bi bi-plus font-20"></i>
+              </button>
+              <div
+                id="accordion5-1"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-group-5">
+                <p class="mb-0 pb-2">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Cupiditate quia earum nemo animi qui assumenda odit facere ad
+                  ipsam? Beatae inventore labore sint provident nostrum.
+                  Possimus velit nostrum modi aliquam.
+                </p>
+                <a
+                  href="#"
+                  class="btn color-bg-theme color-alt-theme mt-4 mb-2"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-transfer-ok">
+                  Varsayılan Adres Yap
+                </a>
+              </div>
+            </div>
+            <div class="divider my-2 opacity-50 color-bg-theme"></div>
+            <div class="accordion-item">
+              <button
+                class="accordion-button px-0 ps-1 mt-3 collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#accordion5-2">
+                <i class="bi bi-geo-alt color-red-dark pe-3 font-14"></i>
+                <span class="font-600 font-13">Kayıtlı Adres 2</span>
+                <i class="bi bi-plus font-20"></i>
+              </button>
+              <div
+                id="accordion5-2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#accordion-group-5">
+                <p class="mb-0 pb-2">
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
+                  totam magni doloribus quos inventore deleniti dolorem soluta
+                  magnam modi, fuga, ducimus iusto similique est consectetur
+                  itaque obcaecati vitae delectus! Facilis!
+                </p>
+                <a
+                  href="#"
+                  class="btn color-bg-theme color-alt-theme mt-4 mb-2"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-transfer-ok">
+                  Varsayılan Adres Yap
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Form Area -->
+      </div>
+      <!-- End of Page Content-->
+      <!-- Transfer Success -->
+      <div
+        id="menu-transfer-ok"
+        style="width: 320px; display: block"
+        class="offcanvas offcanvas-modal offcanvas-detached rounded-m">
+        <div class="content text-center">
+          <i
+            style="font-size: 65px"
+            class="scale-box bi bi-check-circle-fill color-green-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+          <h1 class="pt-3 font-28">Adres Değiştirildi</h1>
+          <p class="font-14"></p>
+          <a
+            href="page-ayarlar.html"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full gradient-green shadow-bg shadow-bg-xs"
+            >Ana Sayfaya Devam Et</a
+          >
+        </div>
+      </div>
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>

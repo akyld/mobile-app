@@ -4,7 +4,7 @@
   "name": "PayApp",
   "scope": "/",
   "display": "fullscreen",
-  "start_url": "/pages/home_page.html",
+  "start_url": "/pages/index.html",
   "short_name": "PayApp",
   "description": "",
   "orientation": "portrait",
