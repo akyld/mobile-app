@@ -5123,3 +5123,31 @@ input[type="range"] {
   padding-right: 1rem;
   padding-top: 0.5rem;
 }
+
+/* Credit Card Styles */
+.credit-card {
+  width: 480px;
+  /* aspect-ratio: 1.586; */
+  background: linear-gradient(75deg, #2a2a72 0%, #009ffd 74%);
+  border: none;
+  border-radius: 16px;
+  color: white;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+}
+
+/* .credit-card:hover {
+  transform: translateY(-10px) rotateY(5deg);
+  box-shadow: -20px 20px 30px -10px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(0, 159, 253, 0.2);
+} */
+
+.card-number {
+  letter-spacing: 0.2em;
+}
+
+/* Make text sharper */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
