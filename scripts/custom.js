@@ -6,6 +6,30 @@ setTimeout(function () {
   }
 }, 150);
 
+function setupLanguageSelection() {
+  const languageLinks = document.querySelectorAll(".menu-size a");
+
+  languageLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      // Remove the active icon from all links
+      languageLinks.forEach((link) => {
+        const activeIcon = link.querySelector(".active-icon img");
+        if (activeIcon) {
+          activeIcon.style.display = "none";
+        }
+      });
+
+      // Add the active icon to the clicked link
+      const activeIcon = link.querySelector(".active-icon img");
+      if (activeIcon) {
+        activeIcon.style.display = "block";
+      }
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   ("use strict");
 
@@ -24,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function init_template() {
     //Caching Global Variables
     var i, e, el, evt, event; //https://www.w3schools.com/js/js_performance.asp
+
+    // Call the setupLanguageSelection function
+    setupLanguageSelection();
 
     var cardStack = document.querySelectorAll(".card-stack .card");
     if (cardStack[0]) {
@@ -1135,6 +1162,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
   /* Notifications */
 
   document.addEventListener("click", function (event) {
