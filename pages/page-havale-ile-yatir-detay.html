@@ -41,7 +41,7 @@
           <div
             class="page-title position-relative d-flex align-items-center justify-content-center">
             <div class="position-absolute start-0">
-              <a href="page-ayarlar.html" class="ms-3 icon icon-s">
+              <a href="page-para-cek-yatir.html" class="ms-3 icon icon-s">
                 <i class="bi bi-chevron-left color-theme font-14"></i>
               </a>
             </div>
@@ -49,67 +49,61 @@
         </div>
         <!-- Page Discription -->
         <div class="my-5 text-center color-theme mx-4">
-          <h1>Telefon Değiştir</h1>
+          <h1>Havale / EFT</h1>
+          <p>
+            Aşağıdaki IBAN'a yatıralacak tutar,açıklama alanına yazılacak hesap
+            numarasına ait hesaba geçecek.
+          </p>
         </div>
         <!-- Form Area -->
         <div class="card card-style shadow-none bg-transparent">
           <div class="content mb-0">
-            <div
-              class="form-custom form-label form-border form-icon mb-4 bg-transparent">
-              <i class="bi bi-asterisk font-13 bg-transparent"></i>
-              <input
-                type="number"
-                class="form-control rounded-xs bg-transparent"
-                id="c1"
-                placeholder="Mevcut Telefon Numarası" />
-              <label for="c1" class="bg-transparent"
-                >Mevcut Telefon Numarası</label
-              >
-              <span>(Gerekli)</span>
-            </div>
-            <div
-              class="form-custom form-label form-border form-icon mb-4 bg-transparent">
-              <i class="bi bi-asterisk font-13 bg-transparent"></i>
-              <input
-                type="number"
-                class="form-control rounded-xs bg-transparent"
-                id="c2"
-                placeholder="Yeni Telefon Numarası" />
-              <label for="c2" class="bg-transparent"
-                >Yeni Telefon Numarası</label
-              >
-              <span>(Gerekli)</span>
-            </div>
-            <a
-              href="#"
-              class="btn btn-full color-bg-theme color-alt-theme mt-4"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#menu-transfer-ok">
-              Telefon Numarasını Değiştir
+            <a href="page-havale-ile-yatir.html">
+              <h5>Banka</h5>
+              <div class="d-flex py-2 align-items-center">
+                <div class="icon me-3">
+                  <img
+                    class="rounded-xl"
+                    style="width: 50px; height: 50px"
+                    src="/images/pictures/garantibankasi.svg"
+                    alt="" />
+                </div>
+                <div class="ps-1">
+                  <h5 class="mb-0">Garanti</h5>
+                </div>
+                <div class="ms-auto text-end icon">
+                  <i class="bi bi-chevron-right font-18 color-theme"></i>
+                </div>
+              </div>
             </a>
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
+              <div class="ps-1">
+                <h5 class="mb-0">IBAN'ın</h5>
+                <p class="text-decoration-underline">
+                  TR00 0000 0000 0000 0000 0000 00
+                </p>
+              </div>
+            </div>
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
+              <div class="ps-1">
+                <h5 class="mb-0">Hesap Numaran</h5>
+                <p class="text-decoration-underline">0000000000</p>
+              </div>
+            </div>
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
+              <div class="ps-1">
+                <h5 class="mb-0">Hesap Sahibi</h5>
+                <p>John Doe</p>
+              </div>
+            </div>
+            <div class="divider my-3 opacity-70"></div>
           </div>
         </div>
       </div>
       <!-- End of Page Content-->
-      <!-- Transfer Success -->
-      <div
-        id="menu-transfer-ok"
-        style="width: 320px; display: block"
-        class="offcanvas offcanvas-modal offcanvas-detached rounded-m">
-        <div class="content text-center">
-          <i
-            style="font-size: 65px"
-            class="scale-box bi bi-check-circle-fill color-green-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
-          <h1 class="pt-3 font-28">Telefon Numarası Başarıyla Değiştirildi</h1>
-          <p class="font-14"></p>
-          <a
-            href="index.html"
-            data-bs-toggle="offcanvas"
-            class="btn btn-full gradient-green shadow-bg shadow-bg-xs"
-            >Ana Sayfaya Devam Et</a
-          >
-        </div>
-      </div>
 
       <!-- Off Canvas and Menu Elements-->
       <!-- Always outside the Page Content-->

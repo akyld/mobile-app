@@ -3702,8 +3702,8 @@ divider:after {
 }
 
 .tabs-pill a[aria-expanded="true"] {
-  background-color: #4a89dc;
-  border-color: #4a89dc;
+  background-color: #212121;
+  border-color: white;
   color: #fff !important;
 }
 
@@ -4368,7 +4368,7 @@ input[type="range"] {
 }
 
 .theme-dark .form-custom label {
-  color: rgba(255, 255, 255, 0.4);
+  color: white;
 }
 
 .theme-dark .form-custom * {

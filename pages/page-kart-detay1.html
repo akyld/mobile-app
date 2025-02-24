@@ -88,7 +88,7 @@
         <!-- Recent Activity Cards-->
         <div class="card card-style mt-n5 mb-0 shadow-none recent-bg-theme">
           <div class="content">
-            <a href="page-hesap hareketleri.html" class="d-flex py-1">
+            <a href="page-hesap-hareketleri.html" class="d-flex py-1">
               <div class="align-self-center">
                 <span class="icon rounded-s me-2 gradient-red"
                   ><i class="bi bi-youtube color-white fs-3"></i
@@ -107,7 +107,7 @@
               </div>
             </a>
             <div class="divider my-2 opacity-0"></div>
-            <a href="page-hesap hareketleri.html" class="d-flex py-1">
+            <a href="page-hesap-hareketleri.html" class="d-flex py-1">
               <div class="align-self-center">
                 <span class="icon rounded-s me-2 bg-black"
                   ><i class="bi bi-spotify color-green-dark fs-3"></i
@@ -135,6 +135,7 @@
             <div class="search-results disabled-search-list">
               <div class="list-group list-custom-large">
                 <a
+                  href="#"
                   data-trigger-switch="switch-1"
                   class="d-flex py-2 align-items-center">
                   <div class="align-self-center ps-1 color-theme">
@@ -142,11 +143,7 @@
                   </div>
                   <div class="align-self-center ms-auto">
                     <div class="form-switch ios-switch switch-green switch-m">
-                      <input
-                        type="checkbox"
-                        class="ios-input"
-                        id="switch-1"
-                        checked="" />
+                      <input type="checkbox" class="ios-input" id="switch-1" />
                       <label
                         class="custom-control-label"
                         for="switch-1"></label>
@@ -177,17 +174,11 @@
                   </div>
                 </a>
                 <div class="divider my-1 opacity-70"></div>
-                <a class="d-flex py-2 align-items-center">
-                  <div class="ps-1 color-theme">
-                    <h5 class="mb-0">Masterpass İşlemleri</h5>
-                    <span>Kart bilgilerini girmeden kolayca alışveriş yap</span>
-                  </div>
-                  <div class="ms-auto text-end icon">
-                    <i class="bi bi-chevron-right font-18 color-theme"></i>
-                  </div>
-                </a>
-                <div class="divider my-1 opacity-70"></div>
-                <a class="d-flex py-2 align-items-center">
+                <a
+                  href="#"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-transfer-failed"
+                  class="d-flex py-2 align-items-center">
                   <div class="ps-1 color-theme">
                     <h5 class="mb-0">Kartı İptal Et</h5>
                   </div>
@@ -204,6 +195,36 @@
 
       <!-- Off Canvas and Menu Elements-->
       <!-- Always outside the Page Content-->
+      <!-- Transfer Failed -->
+      <div
+        id="menu-transfer-failed"
+        style="width: 320px; display: block"
+        class="offcanvas offcanvas-modal offcanvas-detached rounded-m">
+        <div class="content text-center">
+          <i
+            style="font-size: 50px"
+            class="scale-box bi bi-x-circle-fill color-red-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+          <h1 class="pt-3 font-24">
+            Kartı İptal Etmek İstediğinize Emin Misiniz?
+          </h1>
+          <p class="font-14 my-3">
+            İşlemi onaylamanız halinde hemen gerçekleştirebiliriz. Yardımcı
+            olabileceğimiz bir konu varsa bize ulaşabilirsiniz.
+          </p>
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full color-alt-theme color-bg-theme shadow-bg shadow-bg-xs mb-3"
+            >Vazgeç</a
+          >
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full gradient-red shadow-bg shadow-bg-xs"
+            >İptal Et</a
+          >
+        </div>
+      </div>
 
       <!-- Main Sidebar Menu -->
     </div>

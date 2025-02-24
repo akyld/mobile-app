@@ -32,46 +32,51 @@
 
     <!-- Page Wrapper-->
     <div id="page">
+      <!-- Footer Bar -->
+
       <!-- Page Content - Only Page Elements Here-->
-      <div class="page-content my-0 py-0">
-        <div class="card bg-5 card-fixed">
-          <div class="card-center mx-3 px-4 py-4 bg-theme rounded-m">
-            <h1 class="font-30 font-800 mb-1">PayApp</h1>
-            <p>Hesabını Kurtar</p>
-            <div
-              class="form-custom form-label form-border form-icon mb-3 bg-transparent">
-              <i class="bi bi-at font-16"></i>
-              <input
-                type="email"
-                class="form-control rounded-xs"
-                id="c1"
-                placeholder="Email Adresi" />
-              <label for="c1" class="color-theme">Email Adresi</label>
-              <span>(gerekli)</span>
-            </div>
-            <a
-              href="index.html"
-              class="btn btn-full color-bg-theme color-alt-theme mt-4"
-              >Gönder</a
-            >
-            <div class="row">
-              <div class="col-6 text-start">
-                <a
-                  href="page-hesapolustur.html"
-                  class="font-11 color-theme opacity-40 pt-4 d-block"
-                  >Hesap Oluştur</a
-                >
-              </div>
-              <div class="col-6 text-end">
-                <a
-                  href="page-giris-yap.html"
-                  class="font-11 color-theme opacity-40 pt-4 d-block"
-                  >Hesaba Giriş Yap</a
-                >
-              </div>
+      <div class="page-content footer-clear">
+        <!-- Page Title -->
+        <div class="pt-3 mt-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="page-para-cek-yatir.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
             </div>
           </div>
-          <div class="card-overlay rounded-0 m-0 bg-black opacity-70"></div>
+        </div>
+        <!-- Page Discription -->
+        <div class="my-5 text-center color-theme mx-4">
+          <h1>Hesap Seç</h1>
+          <p>
+            Hesabındaki bakiyeni istediğin hesabına çekebilirsin.Bu işlem için
+            banka hesaplarını ekleyebilir veya görüntüleyebilirin.
+          </p>
+        </div>
+        <!-- Form Area -->
+        <div class="card card-style shadow-none bg-transparent">
+          <div class="content mb-0">
+            <div class="d-flex py-2 align-items-center">
+              <div class="icon rounded-s me-2">
+                <i class="bi bi-bank color-theme font-24 ps-1"></i>
+              </div>
+              <div class="ps-1">
+                <h5 class="mb-0">Universal Bank</h5>
+                <p>0000 0000 **** 0000 - 05/29</p>
+              </div>
+              <div class="ms-auto text-end icon">
+                <i class="bi bi-chevron-right font-18 color-theme"></i>
+              </div>
+            </div>
+            <div class="divider my-1 opacity-70"></div>
+            <a
+              href="page-kart-ekle.html"
+              class="mx-3 btn btn-full color-alt-theme color-bg-theme text-center font-900 my-3"
+              ><i class="bi bi-plus-circle me-2"></i>Kart Ekle</a
+            >
+          </div>
         </div>
       </div>
       <!-- End of Page Content-->
