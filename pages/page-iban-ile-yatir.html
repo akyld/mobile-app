@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>PayApp - Finance, Banking, Wallet, Crypto Mobile PWA</title>
+    <link rel="stylesheet" type="text/css" href="/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/styles/style.css?v=1" />
+    <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link rel="manifest" href="/_manifest.json" />
+    <meta id="theme-check" name="theme-color" content="#FFFFFF" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="app/icons/icon-192x192.png" />
+  </head>
+
+  <body class="theme-light">
+    <div id="preloader">
+      <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <!-- Page Wrapper-->
+    <div id="page">
+      <!-- Footer Bar -->
+
+      <!-- Page Content - Only Page Elements Here-->
+      <div class="page-content footer-clear">
+        <!-- Page Title -->
+        <div class="pt-3 mt-3">
+          <div
+            class="page-title position-relative d-flex align-items-center justify-content-center">
+            <div class="position-absolute start-0">
+              <a href="page-para-cek-yatir.html" class="ms-3 icon icon-s">
+                <i class="bi bi-chevron-left color-theme font-14"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Page Discription -->
+        <div class="my-5 text-center color-theme mx-4">
+          <h1>Kendi IBAN'ına Yatır</h1>
+          <p>
+            Hesap numaranı kullanarak saniyeler içerisinde para yatır.Para
+            transferi yapmak için bu hesap numarasını da paylaşabilirsin.
+          </p>
+        </div>
+        <!-- Form Area -->
+        <div class="card card-style shadow-none bg-transparent">
+          <div class="content mb-0">
+            <a href="#" class="d-flex py-2 align-items-center">
+              <div class="icon rounded-s me-2">
+                <i class="bi bi-person color-theme font-24 ps-1"></i>
+              </div>
+              <div class="ps-1">
+                <h5 class="mb-0">IBAN'ın</h5>
+                <p class="text-decoration-underline">
+                  TR00 0000 0000 0000 0000 0000 00
+                </p>
+              </div>
+            </a>
+            <div class="divider my-1 opacity-70"></div>
+            <a href="#" class="d-flex py-2 align-items-center">
+              <div class="icon rounded-s me-2">
+                <i class="bi bi-cash-stack color-theme font-24 ps-1"></i>
+              </div>
+              <div class="ps-1">
+                <h5 class="mb-0">Kalan Limitin</h5>
+                <p>₺10.000,00</p>
+              </div>
+              <div class="ms-auto text-end">
+                <div
+                  class=""
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-modal-window"
+                  href="#">
+                  <i class="bi bi-question-circle color-theme font-16"></i>
+                </div>
+              </div>
+            </a>
+            <div class="divider my-1 opacity-70"></div>
+          </div>
+        </div>
+      </div>
+      <!-- End of Page Content-->
+      <!-- Menu Modal Wındow -->
+      <div
+        id="menu-modal-window"
+        style="height: 180px; width: 320px; display: block"
+        class="offcanvas offcanvas-modal rounded-m">
+        <div class="content mt-1">
+          <h2 class="pt-3 text-center">Kalan Limit</h2>
+          <p class="mb-4 text-center">
+            Para yatırırken kalan limitini unutmamalısın.
+          </p>
+          <a
+            href="#"
+            data-bs-dismiss="offcanvas"
+            class="btn btn-full color-bg-theme color-alt-theme shadow-bg shadow-bg-xs"
+            >Tamam</a
+          >
+        </div>
+      </div>
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+    </div>
+    <!-- End of Page ID-->
+
+    <script src="/scripts/bootstrap.min.js"></script>
+    <script src="/scripts/custom.js"></script>
+  </body>
+</html>
