@@ -52,6 +52,42 @@ document.addEventListener("DOMContentLoaded", () => {
     // Call the setupLanguageSelection function
     setupLanguageSelection();
 
+    const profilePictureInput = document.getElementById("profile-picture");
+    const profilePicturePreview = document.getElementById(
+      "profile-picture-preview"
+    );
+    const inputIcon = document.querySelector(".input-icon");
+
+    if (inputIcon) {
+      inputIcon.removeEventListener("click", handleIconClick);
+      inputIcon.addEventListener("click", handleIconClick);
+    }
+
+    if (profilePictureInput) {
+      profilePictureInput.removeEventListener("change", handleFileChange);
+      profilePictureInput.addEventListener("change", handleFileChange);
+    }
+
+    function handleIconClick() {
+      profilePictureInput.click();
+    }
+
+    function handleFileChange(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          // Display the uploaded image
+          profilePicturePreview.src = e.target.result;
+          profilePicturePreview.style.display = "block";
+          if (inputIcon) {
+            inputIcon.style.display = "none";
+          }
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
     var cardStack = document.querySelectorAll(".card-stack .card");
     if (cardStack[0]) {
       var cardHeight = document
@@ -1253,7 +1289,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     chartInstance = new ApexCharts(chartContainer, {
       series: [52.99, 32.99],
-      labels: ["Youtube", "Spotify"],
+      labels: ["Youtube Premium", "Spotify"],
       colors: ["#d84558", "#8cc152"],
       chart: { type: "donut" },
       plotOptions: {

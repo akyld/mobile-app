@@ -17,6 +17,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet" />
+
     <link rel="manifest" href="/_manifest.json" />
     <meta id="theme-check" name="theme-color" content="#FFFFFF" />
     <link
@@ -49,74 +50,172 @@
         </div>
 
         <!-- Page Discription -->
-        <div class="my-5 text-center color-theme mx-4">
-          <h1>Adres Bilgilerini Yönet</h1>
-          <div class="accordion accordion-m border-0" id="accordion-group-5">
-            <div class="accordion-item">
-              <button
-                class="accordion-button px-0 ps-1 mt-3 collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#accordion5-1">
-                <i class="bi bi-geo-alt color-red-dark pe-3 font-14"></i>
-                <span class="font-600 font-13">Kayıtlı Adres 1</span>
-                <i class="bi bi-plus font-20"></i>
-              </button>
-              <div
-                id="accordion5-1"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordion-group-5">
-                <p class="mb-0 pb-2">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate quia earum nemo animi qui assumenda odit facere ad
-                  ipsam? Beatae inventore labore sint provident nostrum.
-                  Possimus velit nostrum modi aliquam.
-                </p>
-                <a
-                  href="#"
-                  class="btn color-bg-theme color-alt-theme mt-4 mb-2"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#menu-transfer-ok">
-                  Varsayılan Adres Yap
-                </a>
+        <div class="container my-5">
+          <h2 class="text-center mb-4">Adres Bilgilerini Yönet</h2>
+
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="card shadow-sm mb-4 rounded-3 card-bg-theme">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="bi bi-geo-alt-fill color-theme me-2"></i>
+                    Kayıtlı Adres 1
+                    <span
+                      class="badge color-bg-theme color-alt-theme float-end rounded-xs"
+                      >Varsayılan</span
+                    >
+                  </h5>
+                  <p class="card-text">
+                    Atatürk Mah. Cumhuriyet Cad. No: 123, Daire: 5,
+                    Çankaya/Ankara
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <a
+                      class="list-group-item btn btn-xs color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs me-2"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#menu-top-full"
+                      href="#">
+                      <i class="bi bi-pencil-square me-1"></i> Düzenle
+                    </a>
+                    <a
+                      class="list-group-item btn btn-xs color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#menu-transfer-failed"
+                      href="#">
+                      <i class="bi bi-trash me-1"></i> Sil
+                    </a>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="divider my-2 opacity-50 color-bg-theme"></div>
-            <div class="accordion-item">
-              <button
-                class="accordion-button px-0 ps-1 mt-3 collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#accordion5-2">
-                <i class="bi bi-geo-alt color-red-dark pe-3 font-14"></i>
-                <span class="font-600 font-13">Kayıtlı Adres 2</span>
-                <i class="bi bi-plus font-20"></i>
-              </button>
-              <div
-                id="accordion5-2"
-                class="accordion-collapse collapse"
-                data-bs-parent="#accordion-group-5">
-                <p class="mb-0 pb-2">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut
-                  totam magni doloribus quos inventore deleniti dolorem soluta
-                  magnam modi, fuga, ducimus iusto similique est consectetur
-                  itaque obcaecati vitae delectus! Facilis!
-                </p>
-                <a
-                  href="#"
-                  class="btn color-bg-theme color-alt-theme mt-4 mb-2"
-                  data-bs-toggle="offcanvas"
-                  data-bs-target="#menu-transfer-ok">
-                  Varsayılan Adres Yap
-                </a>
+
+              <div class="card shadow-sm mb-4 rounded-3 card-bg-theme">
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <i class="bi bi-geo-alt-fill color-theme me-2"></i>
+                    Kayıtlı Adres 2
+                  </h5>
+                  <p class="card-text">
+                    Bahçelievler Mah. İstiklal Sok. No: 45, Kat: 3,
+                    Beşiktaş/İstanbul
+                  </p>
+                  <div class="d-flex justify-content-end">
+                    <a
+                      class="list-group-item btn btn-xs color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs me-2"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#menu-top-full"
+                      href="#">
+                      <i class="bi bi-pencil-square me-1"></i> Düzenle
+                    </a>
+                    <a
+                      class="list-group-item btn btn-xs color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs me-2"
+                      data-bs-toggle="offcanvas"
+                      data-bs-target="#menu-transfer-failed"
+                      href="#">
+                      <i class="bi bi-trash me-1"></i> Sil
+                    </a>
+                    <button
+                      class="list-group-item btn btn-xs color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs">
+                      <i class="bi bi-check-circle me-1"></i> Varsayılan Yap
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center">
+                <button
+                  class="list-group-item btn btn-lg color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addAddressModal">
+                  <i class="bi bi-plus-circle me-2"></i> Yeni Adres Ekle
+                </button>
               </div>
             </div>
           </div>
         </div>
+
         <!-- Form Area -->
       </div>
       <!-- End of Page Content-->
-      <!-- Transfer Success -->
+
+      <!-- Off Canvas and Menu Elements-->
+      <!-- Always outside the Page Content-->
+
+      <!-- Change Adress -->
+      <div
+        id="menu-top-full"
+        style="height: 100%; display: block"
+        class="offcanvas offcanvas-top">
+        <div class="d-flex m-3">
+          <div class="align-self-center">
+            <h2 class="font-700 mb-0">Adres Değiştir</h2>
+          </div>
+          <div class="align-self-center ms-auto">
+            <a href="#" class="icon icon-xs me-n2" data-bs-dismiss="offcanvas">
+              <i class="bi bi-x-circle-fill color-red-dark font-16"></i>
+            </a>
+          </div>
+        </div>
+        <div class="card card-style card-bg-theme mb-5">
+          <div class="content mt-1">
+            <div class="tabs tabs-borders" id="tab-group-4">
+              <div class="mt-3"></div>
+              <div class="" id="tab-11" data-bs-parent="#tab-group-4">
+                <div class="form-custom form-label form-icon mb-3">
+                  <i class="bi bi-pencil-fill font-12 bg-transparent"></i>
+                  <textarea
+                    class="form-control rounded-xs bg-transparent"
+                    placeholder="Yeni Adresi Girin"
+                    id="c7"></textarea>
+                  <label for="c7" class="bg-transparent font-11"
+                    >Yeni Adresi Girin</label
+                  >
+                </div>
+                <div class="text-end">
+                  <a
+                    href="#"
+                    class="btn btn-lg color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#menu-transfer-ok">
+                    Adresi Değiştir
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Reject Button -->
+      <div
+        id="menu-transfer-failed"
+        style="width: 320px; display: block"
+        class="offcanvas offcanvas-modal offcanvas-detached rounded-m">
+        <div class="d-flex m-3 mb-0">
+          <div class="align-self-center ms-auto">
+            <a href="#" class="icon icon-xs me-n2" data-bs-dismiss="offcanvas">
+              <i class="bi bi-x-circle-fill color-red-dark font-16"></i>
+            </a>
+          </div>
+        </div>
+        <div class="content text-center mt-0">
+          <h1 class="pt-2 font-28">Adresi Sil</h1>
+          <p class="font-14 mb-3">
+            Adresinizi silmek istediğinize emin misiniz?
+          </p>
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full color-bg-theme color-alt-theme shadow-bg shadow-bg-xs mb-3"
+            >Vazgeç</a
+          >
+          <a
+            href="#"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full color-bg-theme color-alt-theme shadow-bg shadow-bg-xs"
+            >Sil</a
+          >
+        </div>
+      </div>
+      <!-- Success Button -->
       <div
         id="menu-transfer-ok"
         style="width: 320px; display: block"
@@ -125,19 +224,16 @@
           <i
             style="font-size: 65px"
             class="scale-box bi bi-check-circle-fill color-green-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
-          <h1 class="pt-3 font-28">Adres Değiştirildi</h1>
+          <h1 class="pt-3 font-28">Adresiniz Başarıyla Değiştirildi</h1>
           <p class="font-14"></p>
           <a
-            href="page-ayarlar.html"
+            href="page-adresleri-yonet.html"
             data-bs-toggle="offcanvas"
             class="btn btn-full gradient-green shadow-bg shadow-bg-xs"
-            >Ana Sayfaya Devam Et</a
+            >Adres Sayfasına Devam Et</a
           >
         </div>
       </div>
-
-      <!-- Off Canvas and Menu Elements-->
-      <!-- Always outside the Page Content-->
     </div>
     <!-- End of Page ID-->
 

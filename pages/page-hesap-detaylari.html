@@ -54,31 +54,29 @@
             <div class="">
               <div class="d-flex align-items-center">
                 <div class="content">
-                  <div class="file-data">
-                    <img
-                      id="image-data"
-                      src="/images/empty.png"
-                      class="img-fluid rounded-circle"
-                      style="max-width: 50%"
-                      alt="img" />
-                    <div class="add-btn">
+                  <div class="">
+                    <div class="profile-picture-upload position-relative">
                       <input
                         type="file"
-                        class="upload-file upload-file-text"
-                        style="z-index: 3"
-                        accept="image/*" />
-                      <p
-                        class="rounded-circle upload-file-text color-bg-theme position-relative"
-                        style="width: 50px; height: 50px">
-                        <i
-                          class="bi bi-person-plus upload-file-text fs-5 color-alt-theme position-absolute"
-                          style="top: 25%; left: 30%"></i>
-                      </p>
-                      <!-- <p
-                        class="btn btn-xs text-uppercase font-700 rounded-circle upload-file-text bg-highlight d-flex align-items-center justify-content-center"
-                        style="width: 50px; height: 50px">
-                        <i class="bi bi-upload upload-file-text"></i>
-                      </p> -->
+                        id="profile-picture"
+                        class="form-control"
+                        accept="image/*"
+                        style="display: none" />
+                      <div class="input-icon-container">
+                        <img
+                          id="profile-picture-preview"
+                          src=""
+                          alt="Profile Picture Preview"
+                          class="rounded-circle"
+                          style="
+                            display: none;
+                            width: 100px;
+                            height: 100px;
+                            object-fit: cover;
+                            margin-top: 10px;
+                          " />
+                        <i class="bi bi-camera-fill input-icon"></i>
+                      </div>
                     </div>
                   </div>
                 </div>

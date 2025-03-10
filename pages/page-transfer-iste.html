@@ -47,37 +47,37 @@
           </div>
         </div>
 
-        <div class="tabs tabs-links" id="tab-group-6">
-          <div
-            class="tab-controls bg-transparent mx-3 mb-3 justify-content-center">
-            <a
-              class="font-12 rounded-s color-theme"
-              data-bs-toggle="collapse"
-              href="#tab-16"
-              aria-expanded="true"
-              >Kayıtlı Kişiden Transfer</a
-            >
-            <a
-              class="font-12 rounded-s color-theme"
-              data-bs-toggle="collapse"
-              href="#tab-17"
-              aria-expanded="false"
-              >Transfer İste</a
-            >
-          </div>
-          <div class="card card-style list-bg-theme">
-            <div class="content my-1 list-bg-theme">
+        <div class="card card-style recent-bg-theme mb-5">
+          <div class="content mt-1">
+            <div class="tabs tabs-borders" id="tab-group-4">
+              <div class="tab-controls">
+                <a
+                  class="font-12"
+                  data-bs-toggle="collapse"
+                  href="#tab-10"
+                  aria-expanded="true"
+                  >Kayıtlı Kişiden Transfer</a
+                >
+                <a
+                  class="font-12 collapsed"
+                  data-bs-toggle="collapse"
+                  href="#tab-11"
+                  aria-expanded="false"
+                  >Transfer Yap</a
+                >
+              </div>
+              <div class="mt-3"></div>
               <div
                 class="collapse show"
-                id="tab-16"
-                data-bs-parent="#tab-group-6">
+                id="tab-10"
+                data-bs-parent="#tab-group-4">
                 <div
                   class="list-group list-custom list-group-m list-group-flush rounded-xs">
                   <a
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">Dan Singer</h5>
                       <span>Never Transfered</span>
@@ -91,7 +91,7 @@
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">Jane Red</h5>
                       <span>Requested $1,200.00</span>
@@ -105,7 +105,7 @@
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">Lisa Smith</h5>
                       <span>Cannot send Transfer</span>
@@ -119,7 +119,7 @@
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">John Doe</h5>
                       <span>Requested 3 weeks ago</span>
@@ -133,7 +133,7 @@
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">Dana Rose</h5>
                       <span>Never Transfered</span>
@@ -147,7 +147,7 @@
                     href="#"
                     data-bs-toggle="offcanvas"
                     data-bs-target="#menu-request"
-                    class="list-group-item">
+                    class="list-group-item bg-transparent">
                     <div>
                       <h5 class="font-15 mb-0">Jack Dancer</h5>
                       <span>Never Transfered</span>
@@ -159,7 +159,7 @@
                   </a>
                 </div>
               </div>
-              <div class="collapse" id="tab-17" data-bs-parent="#tab-group-6">
+              <div class="collapse" id="tab-11" data-bs-parent="#tab-group-4">
                 <div class="form-custom form-label form-icon mt-3">
                   <i class="bi bi-person font-16 bg-transparent"></i>
                   <input
@@ -167,10 +167,8 @@
                     class="form-control rounded-xs bg-transparent"
                     id="c2"
                     placeholder="Talep Edilecek Kişi" />
-                  <label for="c2" class="bg-transparent"
-                    >Talep Edilecek Kişi</label
-                  >
-                  <span>(Gerekli)</span>
+                  <label for="c2" class="">Talep Edilecek Kişi</label>
+                  <span class="bg-transparent">(Gerekli)</span>
                 </div>
                 <div class="pb-2"></div>
                 <div class="form-custom form-label form-icon">
@@ -179,21 +177,21 @@
                     type="number"
                     class="form-control rounded-xs bg-transparent"
                     id="c32"
-                    placeholder="Talep Edilen Tutar" />
+                    placeholder="Transfer Gerçekleştirelecek Tutar" />
                   <label for="c32" class="bg-transparent"
-                    >Talep Edilen Tutar</label
+                    >Transfer Gerçekleştirelecek Tutar</label
                   >
-                  <span>(Gerekli)</span>
+                  <span class="bg-transparent">(Gerekli)</span>
                 </div>
                 <div class="pb-2"></div>
                 <div class="form-custom form-label form-icon mb-3">
                   <i class="bi bi-pencil-fill font-12 bg-transparent"></i>
                   <textarea
                     class="form-control rounded-xs bg-transparent"
-                    placeholder="Talep Detayları"
+                    placeholder="Transfer Detayları"
                     id="c7"></textarea>
                   <label for="c7" class="bg-transparent font-11"
-                    >Talep Detayları</label
+                    >Transfer Detayları</label
                   >
                 </div>
                 <div class="form-check form-check-custom">
@@ -213,9 +211,11 @@
                 </div>
                 <a
                   href="#"
-                  class="btn btn-full color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs mt-3 mb-3"
-                  >Transfer Talep Et</a
-                >
+                  class="list-group-item btn btn-full color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs mt-3 mb-3"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#menu-transfer-ok">
+                  Transferi Gerçekleştir
+                </a>
               </div>
             </div>
           </div>
@@ -250,7 +250,7 @@
           <div class="content mt-0">
             <div class="pb-3"></div>
             <div class="form-custom form-label form-icon">
-              <i class="bi bi-code-square font-14"></i>
+              <i class="bi bi-code-square font-14 bg-transparent"></i>
               <input
                 type="number"
                 class="form-control rounded-xs"
@@ -265,7 +265,7 @@
             </div>
             <div class="pb-2"></div>
             <div class="form-custom form-label form-icon mb-3">
-              <i class="bi bi-pencil-fill font-12"></i>
+              <i class="bi bi-pencil-fill font-12 bg-transparent"></i>
               <textarea
                 class="form-control rounded-xs"
                 placeholder="Transfer Detayları"
@@ -295,7 +295,7 @@
             href="#"
             data-bs-dismiss="offcanvas"
             class="mx-3 btn btn-full color-bg-theme color-alt-theme shadow-bg shadow-bg-s mb-4"
-            >Transfer Talep Et</a
+            >Transferi Gerçekleştir</a
           >
         </div>
       </div>
