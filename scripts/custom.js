@@ -1270,6 +1270,102 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Map Scripts */
+  var map = null; // Global variable to store the map instance
+
+  function initMap() {
+    var mapContainer = document.getElementById("map");
+
+    if (!mapContainer) {
+      console.log("Map container not found. Skipping map initialization.");
+      return;
+    }
+
+    if (!map) {
+      console.log("Initializing map...");
+      map = L.map("map").setView([42, 36], 13); // Default view (will update)
+
+      // Add OpenStreetMap tiles
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      getUserLocation(); // 🔥 Get location using IP API
+    } else {
+      console.log("Map already initialized. Skipping re-initialization.");
+    }
+
+    // Force map to resize properly
+    setTimeout(() => {
+      map.invalidateSize();
+    }, 500);
+  }
+
+  // Get user location and update map
+  function getUserLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function (position) {
+          var userLat = position.coords.latitude;
+          var userLng = position.coords.longitude;
+
+          console.log("User's Exact Location:", userLat, userLng);
+
+          // Update map view
+          map.setView([userLat, userLng], 16); // 🔥 Zoom in more
+
+          // Add user marker
+          L.marker([userLat, userLng])
+            .addTo(map)
+            .bindPopup("Your Exact Location")
+            .openPopup();
+        },
+        function (error) {
+          console.error("Geolocation error:", error);
+          alert("Could not get your exact location. Try enabling GPS.");
+        },
+        {
+          enableHighAccuracy: true, // 🔥 Requests more precise location
+          timeout: 10000, // Wait up to 10 seconds for a better result
+          maximumAge: 0, // Don't use cached location
+        }
+      );
+    } else {
+      alert("Geolocation is not supported by your browser.");
+    }
+  }
+
+  // Fetch nearby ATMs using AJAX
+  function fetchNearbyATMs(lat, lng) {
+    console.log("Fetching ATMs near:", lat, lng);
+
+    fetch(
+      `https://api.example.com/nearby-atms?latitude=${lat}&longitude=${lng}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("ATM Data:", data);
+
+        if (data.atms && data.atms.length > 0) {
+          data.atms.forEach(function (atm) {
+            L.marker([atm.latitude, atm.longitude]).addTo(map).bindPopup(`
+                            <b>${atm.name}</b><br>
+                            ${atm.address}<br>
+                            <small>${atm.distance} km away</small>
+                        `);
+          });
+        } else {
+          console.warn("No ATMs found nearby.");
+        }
+      })
+      .catch((error) => {
+        console.error("Failed to load ATMs:", error);
+        alert("Error fetching ATM data.");
+      });
+  }
+
+  // Run map initialization when content is replaced or page is loaded
+  document.addEventListener("swup:contentReplaced", initMap);
+  document.addEventListener("DOMContentLoaded", initMap);
 
   /* Chart */
   let chartInstance; // Store the chart instance globally
