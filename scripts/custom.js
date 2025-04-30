@@ -1270,102 +1270,245 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* Map Scripts */
-  var map = null; // Global variable to store the map instance
 
+  // --- Global Değişkenler ve Fonksiyonlar (Dosyanın üst kısımlarında veya uygun bir yerde) ---
+  let map;
+  let service;
+  let infoWindow;
+
+  // Haritayı başlatan ana fonksiyon
   function initMap() {
-    var mapContainer = document.getElementById("map");
-
-    if (!mapContainer) {
-      console.log("Map container not found. Skipping map initialization.");
+    console.log("initMap fonksiyonu çağrıldı.");
+    const mapDiv = document.getElementById("map");
+    // Güvenlik kontrolü: initMap çağrıldığında map div gerçekten var mı?
+    if (!mapDiv) {
+      console.error("initMap çağrıldı ancak 'map' div bulunamadı!");
       return;
     }
 
-    if (!map) {
-      console.log("Initializing map...");
-      map = L.map("map").setView([42, 36], 13); // Default view (will update)
+    const defaultCenter = { lat: 41.0082, lng: 28.9784 }; // İstanbul (Varsayılan)
 
-      // Add OpenStreetMap tiles
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        attribution: "© OpenStreetMap contributors",
-      }).addTo(map);
+    map = new google.maps.Map(mapDiv, {
+      center: defaultCenter,
+      zoom: 12,
+    });
+    console.log("Google Map nesnesi oluşturuldu.");
 
-      getUserLocation(); // 🔥 Get location using IP API
-    } else {
-      console.log("Map already initialized. Skipping re-initialization.");
-    }
+    infoWindow = new google.maps.InfoWindow();
 
-    // Force map to resize properly
-    setTimeout(() => {
-      map.invalidateSize();
-    }, 500);
-  }
-
-  // Get user location and update map
-  function getUserLocation() {
+    // Kullanıcı konumunu al ve haritayı ayarla (önceki kodunuzdaki gibi)
     if (navigator.geolocation) {
+      console.log("Konum servisi isteniyor...");
       navigator.geolocation.getCurrentPosition(
-        function (position) {
-          var userLat = position.coords.latitude;
-          var userLng = position.coords.longitude;
+        (position) => {
+          const userPos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude,
+          };
+          console.log("Konum başarıyla alındı:", userPos);
+          map.setCenter(userPos);
+          map.setZoom(15);
 
-          console.log("User's Exact Location:", userLat, userLng);
+          // Kullanıcı marker'ı ekle...
+          const userMarker = new google.maps.Marker({
+            position: userPos,
+            map: map,
+            title: "Konumunuz",
+            // icon: { ... } // İsteğe bağlı ikon
+          });
+          userMarker.addListener("click", () => {
+            infoWindow.setContent("Şu anki konumunuz");
+            infoWindow.open(map, userMarker);
+          });
 
-          // Update map view
-          map.setView([userLat, userLng], 16); // 🔥 Zoom in more
-
-          // Add user marker
-          L.marker([userLat, userLng])
-            .addTo(map)
-            .bindPopup("Your Exact Location")
-            .openPopup();
+          // Yakındaki ATM'leri ara
+          searchNearbyATMs(userPos);
         },
-        function (error) {
-          console.error("Geolocation error:", error);
-          alert("Could not get your exact location. Try enabling GPS.");
-        },
-        {
-          enableHighAccuracy: true, // 🔥 Requests more precise location
-          timeout: 10000, // Wait up to 10 seconds for a better result
-          maximumAge: 0, // Don't use cached location
+        () => {
+          console.warn("Konum alınamadı veya izin verilmedi.");
+          handleLocationError(true, infoWindow, map.getCenter());
+          searchNearbyATMs(defaultCenter); // Varsayılan konumda ara
         }
       );
     } else {
-      alert("Geolocation is not supported by your browser.");
+      console.warn("Tarayıcı konum servisini desteklemiyor.");
+      handleLocationError(false, infoWindow, map.getCenter());
+      searchNearbyATMs(defaultCenter); // Varsayılan konumda ara
     }
   }
 
-  // Fetch nearby ATMs using AJAX
-  function fetchNearbyATMs(lat, lng) {
-    console.log("Fetching ATMs near:", lat, lng);
-
-    fetch(
-      `https://api.example.com/nearby-atms?latitude=${lat}&longitude=${lng}`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("ATM Data:", data);
-
-        if (data.atms && data.atms.length > 0) {
-          data.atms.forEach(function (atm) {
-            L.marker([atm.latitude, atm.longitude]).addTo(map).bindPopup(`
-                            <b>${atm.name}</b><br>
-                            ${atm.address}<br>
-                            <small>${atm.distance} km away</small>
-                        `);
-          });
-        } else {
-          console.warn("No ATMs found nearby.");
-        }
-      })
-      .catch((error) => {
-        console.error("Failed to load ATMs:", error);
-        alert("Error fetching ATM data.");
-      });
+  // Konum hatası yönetimi fonksiyonu
+  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(
+      browserHasGeolocation
+        ? "Hata: Konum servisi başarısız oldu."
+        : "Hata: Tarayıcınız konum servisini desteklemiyor."
+    );
+    infoWindow.open(map);
   }
 
-  // Run map initialization when content is replaced or page is loaded
-  document.addEventListener("swup:contentReplaced", initMap);
-  document.addEventListener("DOMContentLoaded", initMap);
+  // Yakındaki ATM'leri arayan fonksiyon
+  function searchNearbyATMs(location) {
+    console.log("Yakındaki ATM'ler aranıyor, merkez:", location);
+    const request = {
+      location: location,
+      radius: "1500", // Metre cinsinden yarıçap
+      type: ["atm"],
+    };
+
+    // PlacesService nesnesini oluşturduğunuzdan emin olun
+    if (!service && map) {
+      service = new google.maps.places.PlacesService(map);
+    } else if (!map) {
+      console.error("PlacesService oluşturulamadı: Harita nesnesi yok.");
+      return;
+    }
+
+    service.nearbySearch(request, (results, status) => {
+      console.log("ATM Arama sonucu durumu:", status);
+      if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+        console.log(results.length + " adet ATM bulundu.");
+        for (let i = 0; i < results.length; i++) {
+          createMarker(results[i]);
+        }
+      } else if (
+        status === google.maps.places.PlacesServiceStatus.ZERO_RESULTS
+      ) {
+        console.log("Yakında ATM bulunamadı.");
+      } else {
+        console.error("ATM arama hatası: " + status);
+      }
+    });
+  }
+
+  // Haritaya marker ekleyen fonksiyon
+  function createMarker(place) {
+    if (!place.geometry || !place.geometry.location) return;
+
+    const marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location,
+      title: place.name, // Marker üzerine gelince görünecek isim
+    });
+
+    // Marker tıklama olayı
+    google.maps.event.addListener(marker, "click", () => {
+      const content = `<strong>${place.name || "ATM"}</strong><br>${
+        place.vicinity || "Adres bilgisi yok"
+      }`;
+      console.log("Marker tıklandı:", content);
+      infoWindow.setContent(content);
+      infoWindow.open(map, marker);
+    });
+  }
+
+  // **ÇOK ÖNEMLİ:** initMap fonksiyonunu global yapın
+  window.initMap = initMap;
+  // ------------------------------------------------------------------------
+
+  // --- Swup Olay Dinleyicisi ---
+  document.addEventListener("swup:contentReplaced", function () {
+    console.log("Swup content replaced olayı tetiklendi.");
+    const mapDiv = document.getElementById("map");
+
+    // -- Diğer sayfa özel kodları (varsa) --
+    // Örn: Cashback filtreleri, chart vb.
+    if (document.getElementById("chart-activity")) {
+      // initChart(); // Eğer varsa ve gerekliyse
+    }
+    if (typeof setupCashbackFilters === "function") {
+      setupCashbackFilters();
+    }
+    // init_template(); // Genel init fonksiyonunu çağırmaktan kaçının, hedeflenmiş fonksiyonları çağırın.
+
+    // -- Harita Sayfası Özel Mantığı --
+    if (mapDiv) {
+      console.log("Map div bulundu.");
+      // Google Maps API daha ÖNCE YÜKLENMEMİŞSE veya map nesnesi yoksa, script'i şimdi ekle
+      // (typeof map === 'undefined') kontrolü de eklenebilir ama API yoksa map de olmaz.
+      if (typeof google === "undefined" || typeof google.maps === "undefined") {
+        console.log(
+          "Google Maps API henüz yüklenmemiş. Script şimdi dinamik olarak ekleniyor..."
+        );
+
+        // Önceki dinamik script'i temizle (varsa, çift yüklemeyi önlemek için)
+        const existingScript = document.getElementById("google-maps-script");
+        if (existingScript) {
+          console.log("Var olan dinamik Google Maps script'i kaldırılıyor.");
+          existingScript.remove();
+        }
+        // Önceki map nesnesini de temizleyelim (varsa)
+        map = null;
+        service = null;
+        infoWindow = null;
+
+        // Yeni script oluştur
+        const script = document.createElement("script");
+        script.id = "google-maps-script"; // ID ekleyerek kolayca bulup silelim
+        // **API ANAHTARINIZI BURAYA YAZIN**
+        script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyA0OBsOOBzmjAiFKkf7t6P_6PAz42F6MBw&libraries=places&callback=initMap`;
+        script.async = true;
+        script.defer = true;
+        script.onerror = () =>
+          console.error("Google Maps script yüklenirken hata oluştu!");
+        // Script'i body'nin sonuna ekle
+        document.body.appendChild(script);
+      } else {
+        // API zaten yüklüyse ve map nesnesi de varsa (nadiren bu duruma gelinir ama kontrol edelim)
+        console.log("Google Maps API zaten yüklü görünüyor.");
+        if (map) {
+          console.log("Mevcut harita nesnesi var, boyutlandırma tetikleniyor.");
+          google.maps.event.trigger(map, "resize");
+          // Haritanın merkezini korumak veya ayarlamak isteyebilirsiniz
+          // map.setCenter(map.getCenter()); // Veya kaydedilmiş bir konuma
+        } else {
+          // API yüklü ama map nesnesi yoksa bu beklenmedik bir durumdur.
+          // Belki initMap içinde bir hata oluşmuştur.
+          console.warn(
+            "API yüklü ama harita nesnesi yok. initMap tekrar çağrılabilir mi? (Riskli)"
+          );
+          // initMap(); // Dikkatli kullanın!
+        }
+      }
+    } else {
+      console.log("Bu sayfada map div bulunamadı.");
+      // İsteğe bağlı: Harita sayfasından ayrıldığında, eklenen script'i veya
+      // harita nesnelerini temizleyebilirsiniz, ama genellikle gerekli olmaz.
+      // const existingScript = document.getElementById('google-maps-script');
+      // if (existingScript) existingScript.remove();
+      // map = null; service = null; infoWindow = null;
+    }
+  });
+
+  // --- Diğer Kodlar ---
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOMContentLoaded olayı tetiklendi.");
+    // Swup dışındaki başlangıç kodları (eğer varsa)
+    // init_template(); // Belki burada genel başlatmalar yapılabilir
+
+    // Swup'ı burada başlat
+    if (
+      typeof Swup !== "undefined" &&
+      isAJAX === true &&
+      window.location.protocol !== "file:"
+    ) {
+      const options = {
+        containers: ["#page"],
+        cache: false,
+        animateHistoryBrowsing: false,
+        // plugins: [new SwupPreloadPlugin()], // Gerekliyse Swup pluginleri
+        linkSelector:
+          'a:not(.external-link):not(.default-link):not([href^="https"]):not([href^="http"]):not([data-gallery])',
+      };
+      const swup = new Swup(options);
+      console.log("Swup başlatıldı.");
+    } else {
+      console.log(
+        "Swup başlatılmadı (AJAX kapalı veya Swup kütüphanesi bulunamadı)."
+      );
+    }
+  });
 
   /* Chart */
   let chartInstance; // Store the chart instance globally

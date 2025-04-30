@@ -18,11 +18,6 @@
     <link rel="stylesheet" type="text/css" href="/fonts/bootstrap-icons.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin="" />
-    <link
       href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap"
       rel="stylesheet" />
     <link rel="manifest" href="/_manifest.json" />
@@ -55,79 +50,7 @@
           </div>
         </div>
 
-        <!-- Search Bar -->
-        <!-- <div class="px-3 mb-3">
-          <div
-            class="input-group input-group-lg shadow-sm rounded-4 overflow-hidden">
-            <span class="input-group-text bg-white border-end-0">
-              <i class="bi bi-search"></i>
-            </span>
-            <input
-              type="text"
-              class="form-control border-start-0 ps-0 bg-white"
-              placeholder="Konum ara..."
-              aria-label="Search location" />
-          </div>
-        </div> -->
-
-        <!-- Map Container -->
-        <!-- <div class="mx-3 mb-4">
-          
-          <div class="card border-0 shadow-lg rounded-4">
-            <div class="card-body p-0">
-              <div
-                id="map-loading"
-                class="d-none"
-                style="height: 50vh; width: 100%">
-                <div class="text-center py-5">
-                  <div class="spinner-border text-primary" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                  </div>
-                </div>
-              </div>
-              <div
-                id="map"
-                class="rounded-4"
-                style="height: 50vh; width: 100%"></div>
-            </div>
-          </div>
-        </div> -->
-
         <div id="map" style="height: 75vh; width: 100%"></div>
-
-        <!-- Nearby ATMs List -->
-        <!-- <div class="px-3">
-          <h2 class="fs-5 fw-bold mb-3">Yakındaki ATM'ler</h2>
-          <div class="list-group list-group-flush rounded-4 shadow-lg">
-            <a href="#" class="list-group-item list-group-item-action py-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1 fw-semibold">Merkez ATM</h6>
-                  <p class="mb-1 text-muted small">Kemalpaşa Caddesi No:123</p>
-                </div>
-                <span class="badge bg-primary rounded-pill px-3">0.2 km</span>
-              </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action py-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1 fw-semibold">Şerafettin ATM</h6>
-                  <p class="mb-1 text-muted small">20 Temmuz Caddesi No:45</p>
-                </div>
-                <span class="badge bg-primary rounded-pill px-3">0.5 km</span>
-              </div>
-            </a>
-            <a href="#" class="list-group-item list-group-item-action py-3">
-              <div class="d-flex justify-content-between align-items-center">
-                <div>
-                  <h6 class="mb-1 fw-semibold">Sahil ATM</h6>
-                  <p class="mb-1 text-muted small">Sahil Caddesi No:78</p>
-                </div>
-                <span class="badge bg-primary rounded-pill px-3">0.8 km</span>
-              </div>
-            </a>
-          </div>
-        </div> -->
 
         <!-- Add your page content here -->
         <!-- Add your page content here -->
@@ -144,38 +67,7 @@
     </div>
     <!-- End of Page ID-->
     <script src="https://unpkg.com/swup@2.0.6/dist/swup.min.js"></script>
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""></script>
     <script src="/scripts/bootstrap.min.js"></script>
     <script src="/scripts/custom.js"></script>
-    <!-- <script>
-      function loadCustomScript() {
-        console.log("Forcing custom.js to load...");
-
-        const oldScript = document.querySelector(
-          'script[src="/scripts/custom.js"]'
-        );
-        if (oldScript) {
-          oldScript.remove(); // Remove old script if it exists
-        }
-
-        const newScript = document.createElement("script");
-        newScript.src = "/scripts/custom.js";
-        newScript.onload = function () {
-          console.log("custom.js has been loaded!");
-        };
-
-        document.body.appendChild(newScript);
-      }
-
-      loadCustomScript(); // Load on page refresh
-
-      document.addEventListener("swup:contentReplaced", function () {
-        console.log("Swup content replaced. Reloading custom.js...");
-        loadCustomScript();
-      });
-    </script> -->
   </body>
 </html>

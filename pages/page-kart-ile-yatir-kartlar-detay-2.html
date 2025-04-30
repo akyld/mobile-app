@@ -41,7 +41,9 @@
           <div
             class="page-title position-relative d-flex align-items-center justify-content-center">
             <div class="position-absolute start-0">
-              <a href="page-para-cek-yatir.html" class="ms-3 icon icon-s">
+              <a
+                href="page-kart-ile-yatir-kartlar-detay.html"
+                class="ms-3 icon icon-s">
                 <i class="bi bi-chevron-left color-theme font-14"></i>
               </a>
             </div>
@@ -49,60 +51,75 @@
         </div>
         <!-- Page Discription -->
         <div class="my-5 text-center color-theme mx-4">
-          <h1>Banka / Kredi Kartı ile Yatır</h1>
+          <h1>İşlemi Onayla</h1>
           <p>
-            Kayıtlı banka veya kredi kartını kullanarak, para
-            yatırabilirsin.Aynı zamanda otomatik para yatırma talimatı
-            oluşturabilirsin.
+            Kartından para yatırma detayları aşağıdaki gibidir.Lütfen
+            onaylamadan önce kontrol et.
           </p>
         </div>
         <!-- Form Area -->
         <div class="card card-style shadow-none bg-transparent">
           <div class="content mb-0">
-            <a
-              href="page-kart-ile-yatir-kartlar.html"
-              class="d-flex py-2 align-items-center">
+            <div class="d-flex py-2 align-items-center">
               <div class="ps-1">
-                <h5 class="mb-0">Para Yatır</h5>
+                <h5 class="mb-0">Kart Bilgisi</h5>
+                <p>0000 0000 **** 0000 - 05/29</p>
               </div>
-              <div class="ms-auto text-end icon">
-                <i class="bi bi-chevron-right font-18 color-theme"></i>
-              </div>
-            </a>
-            <div class="divider my-2 opacity-70"></div>
-            <a
-              href="page-kart-ile-yatir-kartlar-2.html"
-              class="d-flex py-2 align-items-center">
+            </div>
+
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
               <div class="ps-1">
-                <h5 class="mb-0">Talimat Ver</h5>
+                <h5 class="mb-0">Yatıralacak Tutar</h5>
+                <p>₺10.000,00</p>
               </div>
-              <div class="ms-auto text-end">
-                <div class="" href="#">
-                  <i class="bi bi-chevron-right font-18 color-theme"></i>
-                </div>
-              </div>
-            </a>
-            <div class="divider my-2 opacity-70"></div>
-            <a
-              href="page-talimatlarım.html"
-              class="d-flex py-2 align-items-center">
+            </div>
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
               <div class="ps-1">
-                <h5 class="mb-0">Talimatlarım</h5>
+                <h5 class="mb-0">İşlem Ücreti</h5>
+                <p>Ücretsiz</p>
               </div>
-              <div class="ms-auto text-end">
-                <div class="" href="#">
-                  <i class="bi bi-chevron-right font-18 color-theme"></i>
-                </div>
+            </div>
+            <div class="divider my-3 opacity-70"></div>
+            <div class="d-flex py-2 align-items-center">
+              <div class="ps-1">
+                <h5 class="mb-0">Kartından Çekilecek Toplam Tutar</h5>
+                <p>₺10.000,00</p>
               </div>
-            </a>
-            <div class="divider my-2 opacity-70"></div>
+            </div>
           </div>
+          <a
+            href="#"
+            class="list-group-item btn btn-full color-bg-theme color-alt-theme rounded-s shadow-bg shadow-bg-xs mt-3 mb-3"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#menu-transfer-ok">
+            Onayla
+          </a>
         </div>
       </div>
       <!-- End of Page Content-->
-      <!-- Menu Modal Wındow -->
 
       <!-- Off Canvas and Menu Elements-->
+      <!-- Transfer Success -->
+      <div
+        id="menu-transfer-ok"
+        style="width: 320px; display: block"
+        class="offcanvas offcanvas-modal offcanvas-detached rounded-m">
+        <div class="content text-center">
+          <i
+            style="font-size: 65px"
+            class="scale-box bi bi-check-circle-fill color-green-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+          <h1 class="pt-3 font-28">Transfer Gerçekleşti</h1>
+          <p class="font-14">Transfer bir sorun olmadan gerçekleşti.</p>
+          <a
+            href="page-kart-ile-yatir.html"
+            data-bs-toggle="offcanvas"
+            class="btn btn-full gradient-green shadow-bg shadow-bg-xs"
+            >Tamam</a
+          >
+        </div>
+      </div>
       <!-- Always outside the Page Content-->
     </div>
     <!-- End of Page ID-->
